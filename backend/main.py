@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import create_tables
-from routers import leads, campaigns, templates, email_router, settings, analytics
+from routers import leads, campaigns, templates, email_router, settings as settings_router, analytics
 
 from config import settings
 import os
@@ -30,7 +30,7 @@ app.include_router(leads.router)
 app.include_router(campaigns.router)
 app.include_router(templates.router)
 app.include_router(email_router.router)
-app.include_router(settings.router)
+app.include_router(settings_router.router)
 app.include_router(analytics.router)
 
 
